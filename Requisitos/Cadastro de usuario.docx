@@ -1,0 +1,41 @@
+
+                >>  VERIFICAR REGRAS E PADROES DE DESENVOLVIMENTO PARA INTERFACE NO DOCUMENTO Requisitos\Padrões de interface  <<
+
+                >>  APENAS ADMINISTRADORES PODERAM REALIZAR O CADASTRO, EXCLUSÃO E ALTERAÇÃO DOS REGISTROS  <<
+
+1.	Tela de cadastro de usuário:
+
+    1.1.	Preenchimento automático
+        1.1.1.	Ao preencher no campo 1.2.1 o loguin de algum usuário já existente, deverá preencher os demais campos presentes no item 1.2
+        1.1.2.	Ao preencher os campos do item 1.2, focar no botão Excluir (item 1.3.2)
+        1.1.3.	Após preenchimento dos campos do item 1.2, habilitar a edição de todos os campos.
+
+    1.2.	Campos
+        1.2.1.	Nome e sobre nome
+            1.2.1.1.	Aceitar apenas letras
+            1.2.1.2.	Aceitar no máximo 3 palavras 
+            1.2.1.3.	Aceitar no mínimo 2 palavras 
+
+        1.2.2.	Login
+            1.2.2.1.	Aceitar apenas uma string
+            1.2.2.2.	Aceitar caracteres especiais
+            1.2.2.3.	Não aceitar números
+
+        1.2.3.	Senha
+            1.2.3.1.	Senha fica a critério da infra local a decidir
+
+        1.2.4.	Confirmar senha
+            1.2.4.1.	Verificar se senha digitada no item 1.2.3 é igual a senha colocada no item 1.2.4
+
+    1.3.	Botões
+        1.3.1.	Salvar
+            1.3.1.1.	Ao clicar no botão salvar deverá ser verificado se todos os campos do item 1.2. foram validados
+            1.3.1.2.	Após validação dos campos do item 1.2., deverá realizar a gravação dos dados através da API XXXXX.
+            1.3.1.3.	Após gravação dos dados, limpar todos os campos e retornar ao campo 1.2.1.
+
+        1.3.2.	Cancelar
+            1.3.2.1.	Em qual quer momento do preenchimento das informações e botão cancelar for clicado, todas os campos devem ser apagados e retornar ao campo 1.2.1.
+
+        1.3.3.	Excluir
+            1.3.3.1.	Botão será habilitado apenas pela ação do preenchimento automático item 1.1
+            1.3.3.2.	Se habilitado, realizar a exclusão do usuário através da API xxxx.
