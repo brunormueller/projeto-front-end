@@ -36,9 +36,9 @@ export const Login = () => {
                 login: getInputLoginRef().getValue(),
                 senha: getInputSenhaRef().getValue()
             });
-            alert('Logando')
+            alert('login com Sucesso!')
         } catch {
-            alert('Deu ruim')
+            alert('login falhou!')
         }
     };
     return (

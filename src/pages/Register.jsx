@@ -30,9 +30,9 @@ export const Register = () => {
                 senha: getInputSenhaRef().getValue()
             });
 
-            alert('Cadastrado com Sucesso')
+            alert('Cadastrado com Sucesso!')
         } catch {
-            alert('Deu ruim');
+            alert('Cadastrado falhou!');
         }
     };
 
