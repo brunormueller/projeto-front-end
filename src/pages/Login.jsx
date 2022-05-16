@@ -8,10 +8,6 @@ import { LayoutComponents } from "../components/LayoutComponents";
 import MyInput from "../components/MyInput";
 
 export const Login = () => {
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
-    // const [name, setName] = useState("")
-
     const inputLoginRef = createRef();
     const inputNomeRef = createRef();
     const inputSenhaRef = createRef();
@@ -47,26 +43,16 @@ export const Login = () => {
             <div className="login-form">
                 <span className="login-form-title">Bem Vindo!</span>
                 <span className="login-form-title">
-
                 </span>
                 <div className="wrap-input">
                     <MyInput
                         ref={inputLoginRef}
                     />
-
-                    {/* <input className="has-val input" type="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)} />
-                    <span className="focus-input" data-placeholder="Email"></span> */}
                 </div>
                 <div className="wrap-input">
                     <MyInput
                         ref={inputSenhaRef}
                     />
-                    {/* <input className="has-val input" type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)} />
-                    <span className="focus-input" data-placeholder="Password"></span> */}
                 </div>
                 < div className="container-login-form-btn"
                     onClick={handleOnButtonSaveClick}>
