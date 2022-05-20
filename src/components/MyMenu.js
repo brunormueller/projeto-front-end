@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles,alpha, useTheme } from '@material-ui/core/styles';
+import { makeStyles, alpha, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -22,7 +22,10 @@ import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import FixedTags from './Tags';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import './LayoutComponents/MyMenuStyle.css';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HomeIcon from '@material-ui/icons/Home';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 const drawerWidth = 240;
 
@@ -75,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
       width: '60ch',
     },
   },
-  
+
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
@@ -151,8 +154,8 @@ export function MiniDrawer() {
           [classes.appBarShift]: open,
         })}
       >
-        
-        
+
+
         <Toolbar>
           <IconButton
             color="inherit"
@@ -163,7 +166,7 @@ export function MiniDrawer() {
               [classes.hide]: open,
             })}
           >
-            
+
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
@@ -182,7 +185,7 @@ export function MiniDrawer() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          
+
         </Toolbar>
       </AppBar>
       <Drawer
@@ -203,24 +206,48 @@ export function MiniDrawer() {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-        <div  className="text-center">
-         <Link className="txt2" to="/login">Login</Link></div>
-        
+
+
         <List>
-          {['Home', 'Posts', 'Likes', 'Drafts'].map((text, index) => (
+        <div className="text-center">
+           <div className='IconTxt'> <HomeIcon/>
+           </div>
+            <Link className="txt2" to="/">Home</Link></div>
+
+          <div className="text-center">
+          <div className='IconTxt'> <VpnKeyIcon/>
+          </div>
+            <Link className="txt2" to="/login">Login</Link></div>
+
+          
+
+          <div className="text-center">
+          <div className='IconTxt'> <MailIcon/> </div>
+            <Link className="txt2" to="/home">Posts</Link></div>
+
+          <div className="text-center">
+          <div className='IconTxt'> <ExitToAppIcon/></div>
+            <Link className="txt2" to="/login">Logout</Link></div>
+
+
+
+
+          {/* Substituindo elementos da api por divs */}
+
+          {/* {['Home', 'Posts', 'Likes', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
-              
+
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
-       
+
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
-          ))}
+          ))} */}
         </List>
       </Drawer>
       <main className={classes.content}>

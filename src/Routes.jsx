@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 import { Login } from "./pages/Login";
-import { Home } from "./Home";
+import { Home } from "./pages/Home";
 import {MiniDrawer} from './components/MyMenu'
 import { Register } from "./pages/Register";
 

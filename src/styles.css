@@ -14,7 +14,7 @@
 .login-form-title{
     display: block;
     font-size: 30px;
-    color: azure;
+    color: rgb(7, 7, 7);
     line-height: 1.2;
     text-align: center;
     width: 100%;
@@ -26,7 +26,7 @@
 .wrap-input{
     width: 100%;
     position: relative;
-    border-bottom: 2px solid #adadad;
+    border-bottom: 2px solid #3a3939;
     margin-bottom: 37px;
 }
 
@@ -51,7 +51,7 @@
     
     top:0;
     left: 0;
-
+    
     pointer-events: none;
     color: #adadad;
 
@@ -60,10 +60,10 @@
 content: "";
 display: block;
 position: absolute;
-bottom: -2px;
+bottom: -20px;
 left: 0;
 width: 0;
-height: 2px;
+height: 3px;
 
 -webkit-transition: all 0.4s;
 -o-transition: all 0.4s;
@@ -112,7 +112,7 @@ padding-left: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 13px;
+    padding-bottom: 9px;
 }
 .login-form-btn{
     font-size: 15px;
@@ -146,7 +146,7 @@ background: linear-gradient(to left, #21d4fd, #b721ff);
 }
 .txt1{
     font-size: 14px;
-    color: #adadad;
+    color: #000000;
     padding-right: 5px;
     line-height: 1.5;
     text-decoration: none;
@@ -161,4 +161,14 @@ background: linear-gradient(to left, #21d4fd, #b721ff);
 .App{
     text-align: center;
     min-height: 100vh;
+}
+.MuiFormControl-root {
+    border: 0;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
 }
