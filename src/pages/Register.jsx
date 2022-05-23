@@ -47,6 +47,7 @@ export const Register = () => {
                     <MyInput
                         ref={inputNomeRef}
                     />
+                     <span className="focus-input" data-placeholder="Nome"></span>
                 </div>
                 <div className="wrap-input">
                     <MyInput
