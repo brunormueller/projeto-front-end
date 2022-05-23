@@ -209,26 +209,30 @@ export function MiniDrawer() {
 
 
         <List>
-        <div className="text-center">
-           <div className='IconTxt'> <HomeIcon/>
-           </div>
-            <Link className="txt2" to="/">Home</Link></div>
-
           <div className="text-center">
-          <div className='IconTxt'> <VpnKeyIcon/>
+            <div className='IconTxt'> <HomeIcon /></div>
+            <Link className="txt2" to="/">Home</Link>
           </div>
-            <Link className="txt2" to="/login">Login</Link></div>
 
+          <div className="text-center">
+            <div className='IconTxt'> <VpnKeyIcon /></div>
+            <Link className="txt2" to="/login">Login</Link>
+          </div>
+
+          <div className="text-center">
+            <div className='IconTxt'> <MailIcon /></div>
+            <Link className="txt2" to="/home">Posts</Link>
+          </div>
+
+          <div className="text-center">
+            <div className='IconTxt'> <ExitToAppIcon /></div>
+            <Link className="txt2" to="/login">Logout</Link>
+          </div>
           
-
-          <div className="text-center">
-          <div className='IconTxt'> <MailIcon/> </div>
-            <Link className="txt2" to="/home">Posts</Link></div>
-
-          <div className="text-center">
-          <div className='IconTxt'> <ExitToAppIcon/></div>
-            <Link className="txt2" to="/login">Logout</Link></div>
-
+          <div className="text-center"> 
+            <div className='IconTxt'> <ExitToAppIcon /></div>
+            <Link className="txt2" to="/Tag">Tag</Link>
+          </div>
 
 
 
