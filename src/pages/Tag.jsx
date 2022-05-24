@@ -1,6 +1,6 @@
 import { createRef } from "react"
 import { LayoutComponents } from "../components/LayoutComponents"
-//import axios from "axios";
+import axios from "axios";
 import MyInput from '../components/MyInput'
 
 export const Tag = () => {
@@ -15,11 +15,12 @@ export const Tag = () => {
         console.log("handleOnButtonSaveClick");
         
         try {
-            await axios.post(`/api/Usuario`, {
-                senha: getInputTagRef().getValue()
+            await axios.post(`/api/Tag`, {
+                Nome: getInputTagRef().getValue()
             });
 
             alert('Cadastrado com Sucesso!')
+            
         } catch {
             alert('Cadastrado falhou!');
         }
