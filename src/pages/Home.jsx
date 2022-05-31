@@ -10,7 +10,7 @@ import {
 } from 'react';
 import Routes from "../Routes";
 import JodiEditor from "jodit-react";
-import '../components/LayoutComponents/HomeStyle.css'
+
 import { LayoutComponents } from '../components/LayoutComponents';
 
 export function Home() {

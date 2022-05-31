@@ -48,11 +48,13 @@ export const Login = () => {
                     <MyInput
                         ref={inputLoginRef}
                     />
+                     <span className="focus-input" data-placeholder="Login"></span>
                 </div>
                 <div className="wrap-input">
                     <MyInput
                         ref={inputSenhaRef}
                     />
+                     <span className="focus-input" data-placeholder="Senha"></span>
                 </div>
                 < div className="container-login-form-btn"
                     onClick={handleOnButtonSaveClick}>
