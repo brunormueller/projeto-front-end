@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import '../styles.css';
 import { makeStyles, alpha, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
