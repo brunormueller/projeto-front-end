@@ -1,0 +1,16 @@
+.container-login{
+    align-items: baseline;
+}
+.wrap-login{
+    width: 80%;
+    height: 1000px;
+}
+.container-login-form-btn{
+    width: 10%;
+}
+.wrap-input{
+    width: 40%;
+}
+.container-login-form-btn-consutar{
+    margin-left: 950px;
+}
