@@ -1,42 +1,46 @@
+import styled from 'styled-components';
+
+const MainDiv = styled.div`
+    width: 100%;
+    margin: 0 auto;
+`;
+
+const ContainerDiv = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: ${props => props.alignItems || 'center'};
+    justify-content: center;
+    padding: 15px;
+    background-color: ${props => props.backgroundColor || 'rgb(255, 253, 253)'};
+`;
+
+const ContentDiv = styled.div`
+    width: 40%;
+    background-color: rgb(210, 205, 205);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+`;
+
 export const LayoutComponents = (props) => {
     const {
         customNome1Style,
-        customNome2Style,
+        // customNome2Style,
     } = props;
 
     return (
-        <div style={{
-            width: '100%',
-            margin: '0 auto',
-        }}>
-            <div style={{
-                width: '100%',
-                minHeight: '100vh',
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '15px',
-                backgroundColor: 'rgb(255, 253, 253)',
-
-                // porta de entra pra sobreescrever parametros
-                ...customNome1Style
-            }}>
-                <div style={{
-                        width: '40%',
-                        backgroundColor: 'rgb(210, 205, 205)',
-                        borderRadius: '10px',
-                        overflow: 'hidden',
-                        padding: '77px 55px 33px 55px',
-                        boxShadow: '0 5px 10px 0px rgba(0, 0, 0, 0.2)',
-
-                        // porta de entra pra sobreescrever parametros
-                        ...customNome2Style
-                }}>
+        <MainDiv>
+            <ContainerDiv
+                alignItems={customNome1Style.alignItems}
+                backgroundColor={customNome1Style.backgroundColor}
+            >
+                <ContentDiv>
                     {props.children}
-                </div>
-            </div>
-
-        </div>
+                </ContentDiv>
+            </ContainerDiv>
+        </MainDiv>
     )
 }

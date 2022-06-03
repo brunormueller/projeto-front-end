@@ -3,6 +3,7 @@ import { LayoutComponents } from "../components/LayoutComponents"
 import axios from "axios";
 import MyInput from '../components/MyInput'
 import '../components/LayoutComponents/tag.css';
+import Title from "../components/Title";
 
 export const Tag = () => {
     const inputTagRef = createRef();
@@ -34,13 +35,13 @@ export const Tag = () => {
     };
     return (
         <LayoutComponents
-        customNome1Style={{
-            alignItems: 'baseline',
-        }}
+            customNome1Style={{
+                alignItems: 'baseline',
+                backgroundColor: 'red',
+            }}
         >
             <div className="login-form">
-                <span className="login-form-title">Tag</span>
-                <span className="login-form-title"></span>
+                <Title>Consulta de Tag</Title>
 
                 <div className="container-login-form-btn-consutar"
                     onClick={handleOnButtonKillClick}>
