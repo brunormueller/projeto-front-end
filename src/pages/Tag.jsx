@@ -37,16 +37,18 @@ export const Tag = () => {
         <LayoutComponents
             customNome1Style={{
                 alignItems: 'baseline',
-                backgroundColor: 'red',
-            }}
-        >
+                padding: '20px',
+            }}>
+
             <div className="login-form">
+
                 <Title>Consulta de Tag</Title>
 
                 <div className="container-login-form-btn-consutar"
                     onClick={handleOnButtonKillClick}>
-                    <button className="login-form-btn">Consutar</button>
+                    <button className="login-form-btn">Consultar</button>
                 </div>
+
             </div>
         </LayoutComponents>
     )

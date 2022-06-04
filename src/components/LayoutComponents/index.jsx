@@ -12,7 +12,7 @@ const ContainerDiv = styled.div`
     flex-wrap: wrap;
     align-items: ${props => props.alignItems || 'center'};
     justify-content: center;
-    padding: 15px;
+    padding: ${props => props.padding || '15px'};
     background-color: ${props => props.backgroundColor || 'rgb(255, 253, 253)'};
 `;
 
@@ -28,14 +28,14 @@ const ContentDiv = styled.div`
 export const LayoutComponents = (props) => {
     const {
         customNome1Style,
-        // customNome2Style,
     } = props;
 
     return (
         <MainDiv>
             <ContainerDiv
-                alignItems={customNome1Style.alignItems}
-                backgroundColor={customNome1Style.backgroundColor}
+                alignItems={customNome1Style ? customNome1Style.alignItems : ''}
+                backgroundColor={customNome1Style ? customNome1Style.backgroundColor : ''}
+                padding={customNome1Style ? customNome1Style.padding : ''}
             >
                 <ContentDiv>
                     {props.children}
