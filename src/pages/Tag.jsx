@@ -3,6 +3,7 @@ import { LayoutComponents } from "../components/LayoutComponents"
 import axios from "axios";
 import MyInput from '../components/MyInput'
 import '../components/LayoutComponents/tag.css';
+import MyDataGrid from "../components/MyDataGrid";
 
 export const Tag = () => {
     const inputTagRef = createRef();
@@ -33,35 +34,28 @@ export const Tag = () => {
         }
     };
     return (
-        <LayoutComponents>
-            <div className="login-form">
-                <span className="login-form-title">Tag</span>
-                <span className="login-form-title"></span>
-
-                {/* 
-                <div className="wrap-input">
-                    <MyInput
-                        ref={inputTagRef}
-                    />
-                     <span className="focus-input" data-placeholder="Tag"></span>
-                </div> */}
-
-                <div className="container-login-form-btn-consutar"
-                    onClick={handleOnButtonKillClick}>
-                    <button className="login-form-btn">Consutar</button>
-                </div>
-
-                {/* < div className="container-login-form-btn-salvar"
-                    onClick={handleOnButtonSaveClick}>
-                    <button className="login-form-btn">Salvar</button>
-                </div>
-
-                <div className="container-login-form-btn-excluir"
-                    onClick={handleOnButtonKillClick}>
-                    <button className="login-form-btn">Excluir</button>
-                </div> */}
-
-            </div>
+        <LayoutComponents
+        customNome1Style={{
+            padding: '35px 35px 35px 35px',
+        }}
+        >
+            <MyDataGrid
+                title='Tag'
+                baseURL='api/TbAluno'
+                idColumnName='id'
+                    columns={[
+                        {
+                            field: 'id',
+                            headerName: 'ID',
+                            width: 90,
+                        },
+                        {
+                            field: 'nome',
+                            headerName: 'Nome',
+                            flex: 1,
+                        },
+                ]}
+            />
         </LayoutComponents>
     )
 }

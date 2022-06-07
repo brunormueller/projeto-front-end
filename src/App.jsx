@@ -73,9 +73,7 @@ export default function App() {
 
 
     return (
-
-        //<MiniDrawer/>
-        <Routes />
+        <Routes/>
     );
 }
 

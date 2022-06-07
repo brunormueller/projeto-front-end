@@ -9,16 +9,25 @@ import {
 } from 'react';
 import {
     Button,
+    IconButton,
+    Tooltip,
+    Typography,
 } from '@material-ui/core';
 import {
+    Delete as DeleteIcon,
+    Edit as EditIcon
+} from '@material-ui/icons';
+import {
     DataGrid,
-} from "@material-ui/data-grid";
+} from '@material-ui/data-grid';
 
 const MyDataGrid = forwardRef((props, ref) => {
     const {
+        title,
         baseURL,
         columns,
         idColumnName,
+        onNewButtonClick,
         updateRow,
     } = props;
 
@@ -28,8 +37,6 @@ const MyDataGrid = forwardRef((props, ref) => {
     });
 
     const handleOnUpdate = (rowId, rowData) => {
-        console.log(rowId);
-        console.log(rowData);
         updateRow(rowId, rowData);
     };
 
@@ -49,9 +56,11 @@ const MyDataGrid = forwardRef((props, ref) => {
     };
 
     useEffect(() => {
-        if (state.loadData) {
-            getData();
-        }
+        setTimeout(() => {
+            if (state.loadData) {
+                getData();
+            }
+        }, 0);
     }, [state.loadData, getData]);
 
     useImperativeHandle(ref, () => ({
@@ -64,7 +73,38 @@ const MyDataGrid = forwardRef((props, ref) => {
 
     return (
         <Fragment>
-            <div style={{ height: 300, width: "100%" }}>
+            <div
+                style={{
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    marginBottom: '2%',
+                    alignItems: 'center',
+                }}
+            >
+                <Typography
+                    gutterBottom
+                    variant='h6'
+                    style={{
+                        margin: 20,
+                    }}
+                >
+                    {title}
+                </Typography>
+                <Button
+                    variant='contained'
+                    color='primary'
+                    onClick={onNewButtonClick}
+                >
+                    Novo
+                </Button>
+            </div>
+            <div
+                style={{
+                    height: 'calc(100vh - 200px)',
+                    width: '100%'
+                }}
+            >
                 <DataGrid
                     disableSelectionOnClick
                     rows={rows}
@@ -76,24 +116,32 @@ const MyDataGrid = forwardRef((props, ref) => {
                             renderCell: ({ row }) => {
                                 return (
                                     <div>
-                                        <Button
-                                            variant='contained'
-                                            color='primary'
-                                            onClick={() => {
-                                                handleOnUpdate(row[idColumnName], row);
-                                            }}
+                                        <Tooltip
+                                            arrow
+                                            title='Alterar'
                                         >
-                                            Alterar
-                                        </Button>
-                                        <Button
-                                            variant='contained'
-                                            color='primary'
-                                            onClick={() => {
-                                                deleteRow(row[idColumnName]);
-                                            }}
+                                            <IconButton
+                                                color='primary'
+                                                onClick={() => {
+                                                    handleOnUpdate(row[idColumnName], row);
+                                                }}
+                                            >
+                                                <EditIcon />
+                                            </IconButton>
+                                        </Tooltip>
+                                        <Tooltip
+                                            arrow
+                                            title='Excluir'
                                         >
-                                            Excluir
-                                        </Button>
+                                            <IconButton
+                                                color='primary'
+                                                onClick={() => {
+                                                    deleteRow(row[idColumnName]);
+                                                }}
+                                            >
+                                                <DeleteIcon />
+                                            </IconButton>
+                                        </Tooltip>
                                     </div>
                                 );
                             }
