@@ -4,6 +4,8 @@ import axios from "axios";
 import MyInput from '../components/MyInput'
 import '../components/LayoutComponents/tag.css';
 import MyDataGrid from "../components/MyDataGrid";
+import Title from "../components/Title";
+
 
 export const Tag = () => {
     const inputTagRef = createRef();
