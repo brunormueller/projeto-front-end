@@ -37,8 +37,9 @@ export const Tag = () => {
     };
     return (
         <LayoutComponents
-        customNome1Style={{
-            padding: '35px 35px 35px 35px',
+        customStyle={{
+            padding: '35px 35px 35px',
+            width: '70%',
         }}
         >
             <MyDataGrid
