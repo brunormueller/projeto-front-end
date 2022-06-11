@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {
     forwardRef,
     Fragment,
@@ -96,7 +97,7 @@ const MyDataGrid = forwardRef((props, ref) => {
                     color='primary'
                     onClick={onNewButtonClick}
                 >
-                    Novo
+                   <Link to="/home" style={{textDecoration:"none", color:'white'}}> Novo </Link>
                 </Button>
             </div>
             <div

@@ -26,12 +26,12 @@ export const Login = () => {
 
     const handleOnButtonSaveClick = async () => {
         try {
+            const { data } = await axios.get(`/api/Usuario/${getInputLoginRef().getValue()}/${getInputSenhaRef().getValue()}`);
 
-          await axios.get('/api/Usuario', {
-                
-                login: getInputLoginRef().getValue(),
-                senha: getInputSenhaRef().getValue()
-            });
+            localStorage.setItem('userId', data.id);
+
+            alert(localStorage.getItem('userId'));
+
             alert('login com Sucesso!')
         } catch {
             alert('login falhou!')
@@ -48,13 +48,13 @@ export const Login = () => {
                     <MyInput
                         ref={inputLoginRef}
                     />
-                     <span className="focus-input" data-placeholder="Login"></span>
+                    <span className="focus-input" data-placeholder="Login"></span>
                 </div>
                 <div className="wrap-input">
                     <MyInput
                         ref={inputSenhaRef}
                     />
-                     <span className="focus-input" data-placeholder="Senha"></span>
+                    <span className="focus-input" data-placeholder="Senha"></span>
                 </div>
                 < div className="container-login-form-btn"
                     onClick={handleOnButtonSaveClick}>

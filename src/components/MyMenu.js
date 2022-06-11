@@ -8,29 +8,21 @@ import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
 import InputBase from '@material-ui/core/InputBase';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
-import FixedTags from './Tags';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import './LayoutComponents/MyMenuStyle.css';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import Inicio from '../pages/Inicio';
 
 const drawerWidth = 240;
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -79,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
       width: '60ch',
     },
   },
-
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
@@ -130,9 +121,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
-
-
-
 export function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
@@ -145,6 +133,7 @@ export function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  
 
   return (
     <div className={classes.root}>
@@ -155,8 +144,6 @@ export function MiniDrawer() {
           [classes.appBarShift]: open,
         })}
       >
-
-
         <Toolbar>
           <IconButton
             color="inherit"
@@ -167,7 +154,6 @@ export function MiniDrawer() {
               [classes.hide]: open,
             })}
           >
-
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
@@ -186,7 +172,6 @@ export function MiniDrawer() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-
         </Toolbar>
       </AppBar>
       <Drawer
@@ -207,14 +192,12 @@ export function MiniDrawer() {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-
-
         <List>
-          <div className="text-center">
-            <div className='IconTxt'> <HomeIcon /></div>
-            <Link className="txt2" to="/">Home</Link>
-          </div>
-
+          <Link >
+            <div className="text-center">
+              <div className='IconTxt'> <HomeIcon /> </div>
+              <Link className="txt2" to="/">Home</Link>
+            </div>     
           <div className="text-center">
             <div className='IconTxt'> <VpnKeyIcon /></div>
             <Link className="txt2" to="/login">Login</Link>
@@ -229,37 +212,17 @@ export function MiniDrawer() {
             <div className='IconTxt'> <ExitToAppIcon /></div>
             <Link className="txt2" to="/login">Logout</Link>
           </div>
-          
-          <div className="text-center"> 
+
+          <div className="text-center">
             <div className='IconTxt'> <ExitToAppIcon /></div>
             <Link className="txt2" to="/Tag">Tag</Link>
           </div>
-
-
-
-          {/* Substituindo elementos da api por divs */}
-
-          {/* {['Home', 'Posts', 'Likes', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
-        </List>
+          </Link>
+        </List>        
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-         <Typography paragraph>
-          tetse
-        </Typography>
+        <Inicio/>
       </main>
     </div>
   );
