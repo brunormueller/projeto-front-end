@@ -66,3 +66,10 @@ Seguindo o novo metodo de estilizar as divis, colocar 3 pontos e o nome da custo
 	customNome1Style={{
         novoParametro,
     }}>
+
+maneira de executar
+
+desktop -> npm rum dev
+
+navegado -> npm rum start
+            *não vai abri o navegador, precisa colocar "http://localhost:3000/" no barra de pesquisa
